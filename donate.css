@@ -1,0 +1,206 @@
+
+#main-conteiner{
+    
+    height: 250px;
+    width: 1100px;
+    border: 1px solid black;
+}
+#left-conteiner{
+    float: left;
+    height: 100%;
+    width: 50%;
+   
+    
+}
+#donate-scope{
+    float: left;
+    height: 80%;
+    width: 50%;
+    
+}
+input[type="radio"]{display: none}
+h3{
+    text-align: center;
+    color: black
+}
+
+.custom-donate{
+    float: left;
+    margin-right: 3.15%;
+    margin-top: 4%;   
+    width: 30%;
+    
+    list-style-type: none;
+    
+}
+#custom-free-donate{
+    float: left;
+    
+    margin-top: 4%;
+    
+    list-style-type: none;
+    
+}
+#free-donate{
+     background-color: transparent;
+    background-image: none;
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    cursor: pointer;
+    
+    line-height: 1em;
+    margin-bottom: 0;
+   
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    
+    box-shadow: 1px 1px 0 1px rgba(0,0,0,.6);
+    color: #333;
+    display: block;
+    font-size: 1.35rem!important;
+    margin-left: 0;
+    width: 54%;
+}
+#li-button-donate{
+    float: left;
+    margin-left: -22.5%; 
+    margin-top: 4%;
+    
+    list-style-type: none;
+}
+#button-donate{
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    cursor: pointer;
+    
+    line-height: 1em;
+    margin-bottom: 0;
+   
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: -webkit-linear-gradient(top,#FFF,#D3D3D3);
+    background-image: linear-gradient(180deg,#FFF,#D3D3D3);
+    box-shadow: 1px 1px 0 1px rgba(0,0,0,.6);
+    color: #333;
+    display: block;
+    font-size: 1.63rem!important;
+    margin-left: 0;
+    width: 252%;
+}
+
+.custom-button{
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    cursor: pointer;
+    
+    line-height: 1em;
+    margin-bottom: 0;
+   
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: -webkit-linear-gradient(top,#FFF,#D3D3D3);
+    background-image: linear-gradient(180deg,#FFF,#D3D3D3);
+    box-shadow: 1px 1px 0 1px rgba(0,0,0,.6);
+    color: #333;
+    display: block;
+    font-size: 1.8rem!important;
+    margin-left: 0;
+    width: 100%;
+  
+}
+.button-storage{
+    margin-left: 2.15%;
+    margin-right: 3%;
+    margin-top: 2%
+    
+}
+iframe{
+    margin-top: 1.3%;
+    margin-left: 2.15%
+}
+input[type="radio"]:checked+label{
+    background: #01A635;
+    border-color: #0ffe5a #01bf3d #018d2d #018d2d;
+    box-shadow: 1px 1px 0 1px rgba(0,65,21,.6);
+    color: #fff;
+}
+#mpa-title{
+    margin-top: 2%;
+    margin-left: 10%
+}
+#mpa-description{
+    margin-top: -2%;
+    margin-left: 10%;
+    height: 70%;
+    width: 76%;
+    
+}
+#mpa-image{
+   float:left;
+   border: 1px solid black; 
+   height: 70%;
+   width: 30%;
+}
+#mpa-text{
+    margin-left: 3%;
+    float: left;
+    
+    width: 66.5%;
+    font-size: 85%;
+}
+#mpa-necessity{
+    margin-top: 3%;
+    margin-left: 20%;
+   float: left;
+   font-weight: bold;
+   font-size: 130%;
+   
+   
+   
+}
+.b-popup{
+    margin-left: -0.68%;
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.b-popup .b-popup-content{
+    margin:40px auto 0px auto;
+    width: 40%;
+    padding:10px;
+    background-color: white;
+    
+    box-shadow: 0px 0px 10px #000;
+}
