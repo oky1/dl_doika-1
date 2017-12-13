@@ -12,6 +12,7 @@
    
     
 }
+
 #donate-scope{
     float: left;
     height: 80%;
@@ -167,7 +168,7 @@ input[type="radio"]:checked+label{
 #mpa-image{
    float:left;
    border: 1px solid black; 
-   height: 70%;
+   height: 127px;
    width: 30%;
 }
 #mpa-text{
@@ -203,4 +204,8 @@ input[type="radio"]:checked+label{
     background-color: white;
     
     box-shadow: 0px 0px 10px #000;
+}
+#button-back{
+  float: right;
+  margin-top: -160px;  
 }

@@ -23,7 +23,7 @@ function getOutputFromRequest(url) {
                        id: 'donate-scope',
                        url: data.checkout.redirect_url,
                        style: "",
-                       size: { width: 480, height: 250 }
+                       size: { width: 480, height: 365 }
                        };
                        var pf = new BeGateway(options);
                        pf.buildForm();
@@ -55,6 +55,8 @@ function backbutton(){
 }
 function submitbutton(){
 
+             
+
              var iscustom = false;
              if (document.getElementById("5").checked) {iscustom = document.getElementById("5").value;}
              var customdonate1 = document.getElementById("5").checked;
@@ -71,17 +73,29 @@ function submitbutton(){
               
              var freedonate = document.getElementById("free-donate");
              var isok = customdonate1 + customdonate2 + customdonate3 + customdonate4 + customdonate5 + customdonate6;
-             var regexp = /^\d+$/;
+             var regexp = /^[1-9]\d*$/;
+             
             
             if(!isok && !freedonate.value){
                  
                  document.getElementById("mpa-rules").innerHTML = "Сума не абрана альбо не уведзена!";
                 
              }                      
-             else if(!regexp.test(freedonate.value) && freedonate.value){
-               document.getElementById("mpa-rules").innerHTML = 'У поле "Iншая сума" трэба уводзiць цэлыя лiкi!';
+             else if(!regexp.test(freedonate.value) && freedonate.value ){
+               document.getElementById("mpa-rules").innerHTML = 'У поле "Iншая сума" трэба уводзiць цэлыя лiкi!';  
                
-             } else {
+               
+               
+             }
+             else if(freedonate.value > 2000){
+             
+                       document.getElementById("mpa-rules").innerHTML = 'Ахвяраванне не можа быйць большым за 2000 руб!';
+             
+             
+             }
+              else {
+                  document.getElementById("main-conteiner").setAttribute('style','height: 365px');
+                  document.getElementById("button-back").innerHTML = '<a href="frame.html"><img src="img/button-back.png"></a>';
                   document.getElementById("donate-scope").innerHTML ='';
                   document.getElementById("mpa-rules").innerHTML = '';
                   if(iscustom){
