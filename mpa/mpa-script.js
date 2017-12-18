@@ -5,19 +5,38 @@ search.split('&').forEach(function(item) {
 	item = item.split('=');
 	keys[item[0]] = item[1];
 });
-      
-
-
  
-function getOutputFromRequest(url) {
-      var request = new XMLHttpRequest();
-      request.open('GET', url, true);
+var dataConfig;
+loadDataConfig();
+function loadConfig(){
 
-      request.onreadystatechange = function() {
-        if (request.readyState === 4) {
-          if (request.status >= 200 && request.status < 300){
-          var data = JSON.parse(request.responseText);
-          function bla(data){
+     getOutputFromRequest('/mpa/ajax-config.php', setConfigHTML)
+     
+
+
+}
+function loadDataConfig(){
+   getOutputFromRequest('/mpa/ajax-config.php', setConfigData);
+
+}
+
+function setConfigData(data){
+
+    dataConfig =  data;
+}
+  
+
+function setConfigHTML(data){
+
+      document.getElementById("mpa-title").innerHTML = data.titleDonate;     
+      document.getElementById("mpa-text").innerHTML = data.shortTextDonate;
+      document.getElementById("mpa-sum").innerHTML = data.sumDonate;
+      document.getElementById("mpa-currency").innerHTML = data.currencyDonate;
+      
+      
+}
+          
+function getBePaidJS(data){
                        var options = {
                        type: 'inline',
                        id: 'donate-scope',
@@ -29,7 +48,17 @@ function getOutputFromRequest(url) {
                        pf.buildForm();
             
           } 
-          bla(data);
+
+function getOutputFromRequest(url, callback) {
+      var request = new XMLHttpRequest();
+      request.open('GET', url, true);
+
+      request.onreadystatechange = function() {
+        if (request.readyState === 4) {
+          if (request.status >= 200 && request.status < 300){
+          var data = JSON.parse(request.responseText);
+          
+          return callback(data);
          }
         }
       }; 
@@ -52,6 +81,9 @@ function removeinput(){
 function backbutton(){
         document.getElementById("donate-scope").innerHTML = '<ul class="button-storage"><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="5" class="custom-input" value="5"><label for="5" class="custom-button">5 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="10" class="custom-input" value="10"><label for="10" class="custom-button">10 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="15" class="custom-input" value="15"><label for="15" class="custom-button">15 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="20" class="custom-input" value="20"><label for="20" class="custom-button">20 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="50" class="custom-input" value="50"><label for="50" class="custom-button">50 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="100" class="custom-input" value="100"><label for="100" class="custom-button">100 руб.</label></li><li id="custom-free-donate"><input type="text" name="free-donate" id="free-donate" onclick="radiobutton()" placeholder="Iншая сума" title="Калі ласка, увядзіце неабходную суму"></li><li id="li-button-donate"><button id="button-donate" onclick="submitbutton()">Ахвяруй!</button></li></ul>';
         document.getElementById("mpa-rules").innerHTML = '<a href="javascript:PopUpShow()">Апiсанне спосабу аплаты</a>';
+}
+function back(){
+        document.location.reload(false);
 }
 function submitbutton(){
 
@@ -87,27 +119,34 @@ function submitbutton(){
                
                
              }
-             else if(freedonate.value > 2000){
+             else if(freedonate.value >  dataConfig.maxDonate){
              
-                       document.getElementById("mpa-rules").innerHTML = 'Ахвяраванне не можа быйць большым за 2000 руб!';
+                       document.getElementById("mpa-rules").innerHTML = 'Ахвяраванне не можа быць большым за '+ dataConfig.maxDonate +' руб!';
              
              
              }
+             else if(freedonate.value && freedonate.value < dataConfig.minDonate ){
+             
+                       document.getElementById("mpa-rules").innerHTML = 'Ахвяраванне не можа быць меншым за '+ dataConfig.minDonate +' руб!';
+             
+             
+             }
+                                                                                                         
               else {
                   document.getElementById("main-conteiner").setAttribute('style','height: 365px');
-                  document.getElementById("button-back").innerHTML = '<a href="frame.html"><img src="img/button-back.png"></a>';
+                  document.getElementById("button-back").innerHTML = '<img onclick="back()" src="mpa/img/button-back.png">';
                   document.getElementById("donate-scope").innerHTML ='';
                   document.getElementById("mpa-rules").innerHTML = '';
-                  if(iscustom){
-                     var url = '/donate.php?donate=' + iscustom;
+                  if(iscustom){                                                                                         
+                     var url = 'mpa/donate.php?donate=' + iscustom;
                   
-                  }else{ var url = '/donate.php?donate=' + freedonate.value; }  
-                  getOutputFromRequest(url);
+                  }else{ var url = 'mpa/donate.php?donate=' + freedonate.value; }  
+                  getOutputFromRequest(url,getBePaidJS);
                   
              
              }
 }
-       window.onload = function() {
+window.onload = function() {
         if(keys.message){
             document.getElementById("mpa-rules").innerHTML = '<button onclick="backbutton()">Паспрабаваць яшчэ раз</button>';            
             switch (keys.message) {
@@ -123,7 +162,7 @@ function submitbutton(){
               break;
            }   
         }
-  };
+};
   $(document).ready(function(){
         //Скрыть PopUp при загрузке страницы    
         PopUpHide();
@@ -136,4 +175,4 @@ function submitbutton(){
     function PopUpHide(){
         $("#popup1").hide();
     }
-        
+ loadConfig();     

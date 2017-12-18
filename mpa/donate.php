@@ -1,5 +1,6 @@
 <?php
 require "vendor/autoload.php";
+require_once "config.php";
 use GuzzleHttp\Client;
 
 
@@ -34,7 +35,7 @@ $client = new Client([
 ]);
 
 $response = $client->request('POST', '/ctp/api/checkouts', [
-  'auth'    => ['363', '4f585d2709776e53d080f36872fd1b63b700733e7624dfcadd057296daa37df6'],
+  'auth'    => [$configConfidence['idMarket'], $configConfidence['keyMarket']],
   'headers' => ['Accept' => 'application/json'],
   'json'    => $GetTokenParams,
   'verify' => false
