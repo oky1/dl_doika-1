@@ -41,7 +41,7 @@ function getBePaidJS(data){
                        type: 'inline',
                        id: 'donate-scope',
                        url: data.checkout.redirect_url,
-                       style: "",
+                       style: dataConfig.css,
                        size: { width: 480, height: 365 }
                        };
                        var pf = new BeGateway(options);
