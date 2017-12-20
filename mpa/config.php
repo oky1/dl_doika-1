@@ -14,7 +14,10 @@ $config = [
     // валюта
     'currencyDonate' => 'руб',
     // id товара
-    'idDonate' => ''
+    'idDonate' => '',
+    // css для страницы bePaid
+    'css' => ''
+    
 ];
 $configConfidence = [
     'idMarket' => 363, // id магазина
