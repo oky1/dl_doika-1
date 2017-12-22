@@ -134,7 +134,7 @@ function submitbutton(){
                                                                                                          
               else {
                   document.getElementById("main-conteiner").setAttribute('style','height: 365px');
-                  document.getElementById("button-back").innerHTML = '<img onclick="back()" src="mpa/img/button-back.png">';
+                  document.getElementById("button-back").innerHTML = '<img onclick="back()" src="mpa/img/button-back.png"><p style="font-size:60%">Назад</p>';
                   document.getElementById("donate-scope").innerHTML ='';
                   document.getElementById("mpa-rules").innerHTML = '';
                   if(iscustom){                                                                                         
