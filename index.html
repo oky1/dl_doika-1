@@ -10,37 +10,54 @@
     
 </head>
 <body>
-    <!-- MPA start-->
-    <div id="main-conteiner">
-      <div id="left-conteiner">
-           <h1 id="mpa-title" ></h1>
-          <div id="mpa-description">
-            <img src="mpa/servak.jpg" id="mpa-image"/>
-            <div id="mpa-text"></div>
-            <div id="mpa-necessity">Патрэбная сума: <span id="mpa-sum"></span> <span id="mpa-currency"></span>.</div>
+<!--MPA start -->
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-sm-12 module-donate">
+          <div class="donate-left">
+            <div class="donate-title"></div>
+            <div class="donate-desc">
+              <img src="img/server_pic.png" alt="Ілюстрацыя да апісання модуля даната">
+              <div></div>
+            </div>
+            <div class="donate-sum"></div>
           </div>
-          <div id="button-back"></div>
-      </div>                           
-      <div id="donate-scope">
-           
-           <ul class="button-storage">
-            <li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="5" class="custom-input" value="5"><label for="5" class="custom-button">5 руб.</label></li>
-            <li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="10" class="custom-input" value="10"><label for="10" class="custom-button">10 руб.</label></li>
-            <li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="15" class="custom-input" value="15"><label for="15" class="custom-button">15 руб.</label></li>
-            <li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="20" class="custom-input" value="20"><label for="20" class="custom-button">20 руб.</label></li>
-            <li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="50" class="custom-input" value="50"><label for="50" class="custom-button">50 руб.</label></li>
-            <li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="100" class="custom-input" value="100"><label for="100" class="custom-button">100 руб.</label></li>
-            <li id="custom-free-donate"><input type="text" name="free-donate" id="free-donate" onclick="radiobutton()" placeholder="Iншая сума" title="Калі ласка, увядзіце неабходную суму"></li>
-            <li id="li-button-donate"><button id="button-donate" onclick="submitbutton()">Ахвяруй!</button></li>
-            
-            
-           </ul>
-            
-        
-             
+          <div class="donate-right">
+            <div>
+              <button data-sum="5">5 руб.</button>
+              <button data-sum="10">10 руб.</button>
+              <button data-sum="15">15 руб.</button>
+            </div>
+            <div>
+              <button data-sum="20">20 руб.</button>
+              <button data-sum="50">50 руб.</button>
+              <button data-sum="100">100 руб.</button>
+            </div>
+            <div class="donate-call">
+              <input type="number" placeholder="іншая сума" step="1" min="5" max="2000">
+              <button onclick="submitbutton()">Ахвяруй!</button>
+            </div>
+            <div id="mpa-rules"><a href="javascript:PopUpShow()" class="donate-link">Апiсанне спосабу аплаты</a></div>
+          </div>
+          <div style="display: none" class="donate-form" id="donate-form"></div>
+          <div style="display: none" class="donate-form-answer donate-error-tech">
+            <p>Прабачце, транзакцыя была<br> адхілена з прычыны тэхнічнага збою.</p>
+            <button>Паспрабаваць яшчэ раз</button>
+          </div>
+          <div style="display: none" class="donate-form-answer donate-error-bank">
+            <p>Прабачце, транзакцыя была<br> адхілена банкам.</p>
+            <button>Паспрабаваць яшчэ раз</button>
+          </div>
+          <div style="display: none" class="donate-form-answer donate-success">
+            <p>Ахвяраванне паспяхова здзейснена.</p>
+            <p>Дзякуй за падтрымку!</p>
+          </div>
+        </div>
       </div>
-      
-      <h3 id="mpa-rules"><a href="javascript:PopUpShow()">Апiсанне спосабу аплаты</a></h3>
+    </div>
+  </div>
+
       <div class="b-popup" id="popup1">
         <div class="b-popup-content">
             <p style="text-align: center">На гэтай старонцы ахвяраванне робіцца <strong>банкаўскай картай</strong>.</p>
