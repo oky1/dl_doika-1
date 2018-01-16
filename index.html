@@ -7,22 +7,26 @@
     <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="https://js.bepaid.by/begateway-1-latest.min.js"></script>
     <script type="text/javascript" src="mpa/mpa-script.js"></script>
+
+    <link href="mpa/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/57e075aec4.js"></script>
     
 </head>
 <body>
 <!--MPA start -->
-  <div class="section">
+  <div class="section mod">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-sm-12 module-donate">
           <div class="donate-left">
             <div class="donate-title"></div>
             <div class="donate-desc">
-              <img src="mpa/img/server_pic.png" alt="Ілюстрацыя да апісання модуля даната">
+              <img src="img/server_pic.png" alt="Ілюстрацыя да апісання модуля даната">
               <div></div>
             </div>
             <div class="donate-sum"></div>
           </div>
+          <div style="display: none" class="backButton" onclick="backbutton()"><i class="fa fa-angle-left"></i></div>
           <div class="donate-right">
             <div>
               <button data-sum="5">5 руб.</button>
@@ -35,7 +39,7 @@
               <button data-sum="100">100 руб.</button>
             </div>
             <div class="donate-call">
-              <input type="number" placeholder="іншая сума" step="1" min="5" max="2000">
+              <input type="number" placeholder="іншая сума">
               <button onclick="submitbutton()">Ахвяруй!</button>
             </div>
             <div id="mpa-rules"><a href="javascript:PopUpShow()" class="donate-link">Апiсанне спосабу аплаты</a></div>
@@ -43,11 +47,11 @@
           <div style="display: none" class="donate-form" id="donate-form"></div>
           <div style="display: none" class="donate-form-answer donate-error-tech">
             <p>Прабачце, транзакцыя была<br> адхілена з прычыны тэхнічнага збою.</p>
-            <button>Паспрабаваць яшчэ раз</button>
+            <button onclick="backbutton()">Паспрабаваць яшчэ раз</button>
           </div>
           <div style="display: none" class="donate-form-answer donate-error-bank">
             <p>Прабачце, транзакцыя была<br> адхілена банкам.</p>
-            <button>Паспрабаваць яшчэ раз</button>
+            <button onclick="backbutton()">Паспрабаваць яшчэ раз</button>
           </div>
           <div style="display: none" class="donate-form-answer donate-success">
             <p>Ахвяраванне паспяхова здзейснена.</p>
@@ -74,6 +78,6 @@
         </div>
       </div>
                                                 
-  <!-- MPA end-->   
+  <!-- MPA end-->
 </body>
 </html>

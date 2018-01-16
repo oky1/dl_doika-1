@@ -15,8 +15,6 @@ loadDataConfig();
 function loadConfig(){
 
      getOutputFromRequest('/mpa/ajax-config.php', setConfigHTML)
-     
-
 
 }
 function loadDataConfig(){
@@ -47,7 +45,7 @@ function getBePaidJS(data) {
                        id: 'donate-form',
                        url: data.checkout.redirect_url,
                        style: dataConfig.css,
-                       size: { width: 390, height: 280 }
+                       size: { width: 370, height: 280 }
                        };
                        var pf = new BeGateway(options);
                        pf.buildForm();
@@ -70,11 +68,17 @@ function getOutputFromRequest(url, callback) {
       request.send();
  }
 
-function backbutton(){
-        document.getElementById("donate-scope").innerHTML = '<ul class="button-storage"><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="5" class="custom-input" value="5"><label for="5" class="custom-button">5 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="10" class="custom-input" value="10"><label for="10" class="custom-button">10 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="15" class="custom-input" value="15"><label for="15" class="custom-button">15 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="20" class="custom-input" value="20"><label for="20" class="custom-button">20 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="50" class="custom-input" value="50"><label for="50" class="custom-button">50 руб.</label></li><li class="custom-donate"><input type="radio" name="custom-button-donate" onclick="removeinput()" id="100" class="custom-input" value="100"><label for="100" class="custom-button">100 руб.</label></li><li id="custom-free-donate"><input type="text" name="free-donate" id="free-donate" onclick="radiobutton()" placeholder="Iншая сума" title="Калі ласка, увядзіце неабходную суму"></li><li id="li-button-donate"><button id="button-donate" onclick="submitbutton()">Ахвяруй!</button></li></ul>';
-        document.getElementById("mpa-rules").innerHTML = '<a href="javascript:PopUpShow()">Апiсанне спосабу аплаты</a>';
+function backbutton() {
+  if ( lastRightView === ".donate-form" ) {
+    var childrenForm = document.querySelector(".donate-form");
+     while ( childrenForm.lastChild ) {
+      childrenForm.removeChild(childrenForm.lastChild);
+     }
+  }
+  changeRightView(".donate-right");
 }
-function back(){
+
+function back() {
         document.location.reload(false);
 }
 
@@ -116,6 +120,16 @@ function submitbutton() {
 function changeRightView(newView) {
   document.querySelector(lastRightView).style.display = "none";
   document.querySelector(newView).style.display = "flex";
+
+  if ( newView === ".donate-form" ) {
+    $('#request').ready(function() {
+      document.querySelector(".backButton").style.display = "flex";
+    });
+    document.querySelector(".backButton").style.display = "flex";
+  } else {
+    document.querySelector(".backButton").style.display = "none";
+  }
+
   lastRightView = newView;
 }
 
@@ -136,12 +150,13 @@ window.onload = function() {
   document.querySelector(".donate-right").addEventListener("click", takeSum);
   document.querySelector(".donate-call input").addEventListener("focusout", takeSum);
 };
-
+/*
+why? we can just use display: none
 $(document).ready(function() {
   //Скрыть PopUp при загрузке страницы    
   PopUpHide();
   });
-
+*/
 //Функция отображения PopUp
 function PopUpShow() {
   $("#popup1").show();

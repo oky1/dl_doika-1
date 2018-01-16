@@ -50,7 +50,7 @@ $config = [
 	margin-top: -3px!important;
 }
 .content {
-	margin: 0;
+	margin: 6px 20px!important;
 }
 #request {
 	margin-top: 30px;
@@ -69,7 +69,7 @@ $config = [
 	margin-top: 10.5px;
 }
 #request .exp-date input, #request .verification-value input {
-	width: 160px;
+	width: 140px;
 }
 #request .exp-date label, #request .verification-value label {
 	color: white;
