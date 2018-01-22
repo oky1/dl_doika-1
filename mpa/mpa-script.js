@@ -1,6 +1,6 @@
 var search = window.location.search.substr(1),
 	keys = {},
-  sum = lastButton = null,
+  sum = lastButton = clickedSubmit = null,
   lastRightView = ".donate-right";
       
 search.split('&').forEach(function(item) {
@@ -96,6 +96,10 @@ function takeSum(e) {
 
 function submitbutton() {
 
+  if ( !clickedSubmit ) {
+    clickedSubmit = true;
+  } else return;
+
   if( !sum ) {
 
     document.getElementById("mpa-rules").innerHTML = "Сума не абрана альбо не ўведзена!";
@@ -127,6 +131,7 @@ function changeRightView(newView) {
     });
     document.querySelector(".backButton").style.display = "flex";
   } else {
+    clickedSubmit = false;
     document.querySelector(".backButton").style.display = "none";
   }
 
@@ -150,14 +155,7 @@ window.onload = function() {
   document.querySelector(".donate-right").addEventListener("click", takeSum);
   document.querySelector(".donate-call input").addEventListener("focusout", takeSum);
 };
-/*
-why? we can just use display: none
-$(document).ready(function() {
-  //Скрыть PopUp при загрузке страницы    
-  PopUpHide();
-  });
-*/
-//Функция отображения PopUp
+
 function PopUpShow() {
   $("#popup1").show();
 }
