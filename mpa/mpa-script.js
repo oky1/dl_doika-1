@@ -14,12 +14,12 @@ loadDataConfig();
 
 function loadConfig(){
 
-     getOutputFromRequest('/mpa/ajax-config.php', setConfigHTML)
+     getOutputFromRequest('/dl_doika-1/mpa/ajax-config.php', setConfigHTML)
 
 }
 function loadDataConfig(){
 
-   getOutputFromRequest('/mpa/ajax-config.php', setConfigData);
+   getOutputFromRequest('/dl_doika-1/mpa/ajax-config.php', setConfigData);
 
 }
 
@@ -114,7 +114,7 @@ function submitbutton() {
              
   } else {
 
-    var url = 'mpa/donate.php?donate=' + sum;
+    var url = 'dl_doika-1/mpa/donate.php?donate=' + sum;
     getOutputFromRequest(url, getBePaidJS);
 
 }
