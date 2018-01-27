@@ -36,7 +36,7 @@
   border: 5px solid #ccff00;
   border-radius: 4px;
   width: 780px;
-  margin: 0 15px 0 210px;
+  margin: 0 15px;
 }
 
 .donate-left, .donate-right, .donate-form-answer {
@@ -157,11 +157,6 @@
   font-weight: 700;
 }
 
-.donate-link {
-  color: #ffffff;
-  font-size: 12px;
-}
-
 .donate-form-answer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -221,6 +216,8 @@ input::-webkit-inner-spin-button {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  color: #ffffff;
+  font-size: 12px;
 }
 
 .backButton {
@@ -245,7 +242,7 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 970px) {
 .module-donate {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -255,8 +252,8 @@ input::-webkit-inner-spin-button {
       -ms-flex-align: center;
           align-items: center;
   width: auto;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 0;
+  margin-right: 0;
 }
 .donate-right, .donate-form-answer {
   width: 370px;
@@ -268,7 +265,7 @@ input::-webkit-inner-spin-button {
   padding-bottom: 50px;
 }
 }
-@media (max-width: 440px) {
+@media (max-width: 500px) {
   .donate-desc {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -282,7 +279,10 @@ input::-webkit-inner-spin-button {
     padding-top: 15px;
   }
   .donate-right, .donate-form-answer {
-    width: 300px;
+    width: auto;
+  }
+  .donate-left {
+    width: auto;
   }
 }
 @media (max-width: 350px) {

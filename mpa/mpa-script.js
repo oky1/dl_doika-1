@@ -96,10 +96,6 @@ function takeSum(e) {
 
 function submitbutton() {
 
-  if ( !clickedSubmit ) {
-    clickedSubmit = true;
-  } else return;
-
   if( !sum ) {
 
     document.getElementById("mpa-rules").innerHTML = "Сума не абрана альбо не ўведзена!";
@@ -114,10 +110,14 @@ function submitbutton() {
              
   } else {
 
+    if ( !clickedSubmit ) {
+      clickedSubmit = true;
+    } else return;
+
     var url = 'dl_doika-1/mpa/donate.php?donate=' + sum;
     getOutputFromRequest(url, getBePaidJS);
 
-}
+  }
 
 }
 
