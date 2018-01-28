@@ -131,6 +131,7 @@
       flex-basis: 40%;
   padding: 0;
   max-width: 140px;
+  text-align: center;
 }
 
 .donate-call input::-webkit-input-placeholder {
@@ -286,15 +287,10 @@ input::-webkit-inner-spin-button {
   .donate-desc div {
     padding-top: 15px;
   }
-  .donate-right, .donate-form-answer {
+  .donate-right, .donate-left, .donate-form-answer {
     width: auto;
   }
-  .donate-left {
-    width: auto;
-  }
-}
-@media (max-width: 350px) {
-  .donate-right, .donate-form-answer {
-    width: auto;
+  .donate-call input {
+    width: 100%;
   }
 }
