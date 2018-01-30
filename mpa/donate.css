@@ -20,7 +20,7 @@
 
 #button-back{
   float: right;
-  margin-top: -160px;  
+  margin-top: -160px;
 }
 
 .module-donate {
@@ -79,7 +79,7 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  padding-left: 20px;
+  padding: 0 20px 0 20px;
   line-height: 1.42857143;
 }
 
@@ -218,6 +218,7 @@ input::-webkit-inner-spin-button {
           align-items: flex-end;
   color: #ffffff;
   font-size: 12px;
+  text-decoration: underline;
 }
 
 .backButton {
