@@ -57,6 +57,11 @@ $config2 = ['css' => '
 #request .exp-date input, #request .verification-value input {
 	width: 140px;
 }
+@media screen and (max-width: 980px) {
+	#request .exp-date input, #request .verification-value input {
+		width: 178px;
+	}
+}
 #request .exp-date label, #request .verification-value label {
 	color: white;
 	font-size: 11px;
@@ -72,6 +77,9 @@ $config2 = ['css' => '
 }
 #logos {
 	margin-top: -10px!important;
+}
+.pure-form input[type="text"], .pure-form input[type="tel"] {
+	padding: 0;
 }
     '
     
