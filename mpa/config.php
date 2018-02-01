@@ -57,7 +57,7 @@ $config2 = ['css' => '
 #request .exp-date input, #request .verification-value input {
 	width: 140px;
 }
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
 	#request .exp-date input, #request .verification-value input {
 		width: 178px;
 	}
