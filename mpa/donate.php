@@ -11,9 +11,9 @@ $GetTokenParams = [
     "version" => 2.1,
     "attempts" => 3,
     "settings" => [
-      "success_url" => "https://donate2.falanster.by/mpa/frame.html?message=1",
-      "decline_url" => "https://donate2.falanster.by/mpa/frame.html?message=2",
-      "fail_url" => "https://donate2.falanster.by/mpa/frame.html?message=3",
+      "success_url" => "https://".$_SERVER['HTTP_HOST']."/?message=1",
+      "decline_url" => "https://".$_SERVER['HTTP_HOST']."/?message=2",
+      "fail_url" => "https://".$_SERVER['HTTP_HOST']."/?message=3",
       "language"=> "ru"
     ],
     "order" =>[
