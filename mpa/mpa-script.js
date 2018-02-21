@@ -32,7 +32,7 @@ function setConfigData(data){
 function setConfigHTML(data){
 
   document.getElementsByClassName("donate-title")[0].innerText = data.titleDonate;     
-  document.querySelector(".donate-desc div").innerText = data.shortTextDonate;
+  document.querySelector(".donate-desc div").innerHTML = data.shortTextDonate;
   document.getElementsByClassName("donate-sum")[0].innerText = data.sumDonate;
       
 }
