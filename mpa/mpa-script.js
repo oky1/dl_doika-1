@@ -14,12 +14,12 @@ loadDataConfig();
 
 function loadConfig(){
 
-     getOutputFromRequest('/dl_doika-1/mpa/ajax-config.php', setConfigHTML)
+     getOutputFromRequest('/mpa/ajax-config.php', setConfigHTML)
 
 }
 function loadDataConfig(){
 
-   getOutputFromRequest('/dl_doika-1/mpa/ajax-config.php', setConfigData);
+   getOutputFromRequest('/mpa/ajax-config.php', setConfigData);
 
 }
 
