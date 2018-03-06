@@ -127,7 +127,7 @@ function submitbutton() {
       clickedSubmit = true;
     } else return;
 
-    var url = 'dl_doika-1/mpa/donate.php?donate=' + sum;
+    var url = '/mpa/donate.php?donate=' + sum;
     getOutputFromRequest(url, getBePaidJS);
 
   }
