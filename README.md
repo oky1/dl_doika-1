@@ -60,10 +60,11 @@
     <script type="text/javascript" src="https://js.bepaid.by/begateway-1-latest.min.js"></script>
     <script type="text/javascript" src="mpa/mpa-script.js"></script>
   
-  4) Можна вы даліць файл "sample.html"
-  5) Скапіраваць з файл sample.configc.php у configc.php 
-  6) Заполнить данные в configc.php, в его комментариях даны пояснения какое значение требуется каждому ключу массива.
-  7) Файл config.php можна выкарыстоўваць для наладжвання стыляў модуля.
+  4) Можна выдаліць файл "sample.html"
+  5) Стварыць файл configc.php
+  6) Скапіраваць з файл sample.configc.php у configc.php 
+  7) Заполнить данные в configc.php, в его комментариях даны пояснения какое значение требуется каждому ключу массива.
+  8) Файл config.php можна выкарыстоўваць для наладжвання стыляў модуля.
 
 Калі ласка развівайце бягучы праект і выкарыстоўвайце на сваіх сайтах!
 
