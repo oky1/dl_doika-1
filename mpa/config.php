@@ -1,8 +1,8 @@
 <?php
 
-include_once "configc.php";
+include_once "sample.configc.php";
 
-$config2 = ['css' => '
+$config2 = ['css' =>'
 .payment-methods {
 	background-color: #4d4d4d;
 	border: none;
@@ -54,14 +54,13 @@ $config2 = ['css' => '
 	font-size: 17px;
 	margin-top: 10.5px;
 }
+
+.exp-date,
+.verification-value,
 #request .exp-date input, #request .verification-value input {
-	width: 140px;
+	width: 100%;
 }
-@media screen and (min-width: 320px) and (max-width: 480px) {
-	#request .exp-date input, #request .verification-value input {
-		width: 178px;
-	}
-}
+
 #request .exp-date label, #request .verification-value label {
 	color: white;
 	font-size: 11px;
@@ -81,8 +80,14 @@ $config2 = ['css' => '
 .pure-form input[type="text"], .pure-form input[type="tel"] {
 	padding: 0;
 }
-    '
-    
+#logos-container #logos .inline-logo {
+	display: none;
+}
+#request input:focus {
+	box-shadow: 0px 0px 1px 2px #ccff00;
+	color: #000;
+}
+'
 ];
 
 

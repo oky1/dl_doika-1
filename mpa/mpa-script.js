@@ -40,25 +40,22 @@ function setConfigHTML(data){
 function getBePaidJS(data) {
   changeRightView(".donate-form");
   var width = getWidthOfScreen();
-  var height;
-  if ( width < 450 ) {
-    width -= 100;
-    height = 390;
+  var height = 320;
+  if (width < 450) {
+      width -= 100;
   } else {
-    width = 370;
-    height = 280;
+      width = 300;
   }
 
-                       var options = {
-                       type: 'inline',
-                       id: 'donate-form',
-                       url: data.checkout.redirect_url,
-                       style: dataConfig.css,
-                       size: { width: width, height: height }
-                       };
-                       var pf = new BeGateway(options);
-                       pf.buildForm();
-            
+  var options = {
+    type: 'inline',
+    id: 'donate-form',
+    url: data.checkout.redirect_url,
+    style: dataConfig.css,
+    size: { width: width, height: height }
+  };
+  var pf = new BeGateway(options);
+  pf.buildForm();
 }
 
 function getWidthOfScreen() {
