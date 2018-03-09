@@ -1,6 +1,6 @@
 <?php
 
-include_once "sample.configc.php";
+include_once "configc.php";
 
 $config2 = ['css' =>'
 .payment-methods {
